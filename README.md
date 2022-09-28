@@ -66,7 +66,7 @@ Then remove one sentence speeches that that include the word "yield" once.
 <img src="images/img_8.png">
 
 Now, lets do some data cleaning. We will make all text lowercase, remove punctuation, remove numbers, remove speaker identity tags, and remove double white spaces. We will not remove stop words as the paper did not indicate to remove them. 
-<img src="images/img_9.png">
+<img src="images/img_90.png">
 
 ## LSTM Model Building
 
@@ -103,7 +103,7 @@ Now lets not forget to set up tensorboard so we can actually see how our trainin
 
 Now define the LSTM model as per the Apel 2019 paper descriptions.
 
-<img src="images/img_17.png">
+<img src="images/img_170.png">
 
 Here is the model summary. 
 
