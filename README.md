@@ -101,9 +101,18 @@ Now lets not forget to set up tensorboard so we can actually see how our trainin
 
 ## LSTM Model Training
 
+Now define the LSTM model as per the Apel 2019 paper descriptions.
 
+<img src="images/img_17.png">
 
+Here is the model summary. 
 
+<img src="images/img_18.png">
 
+Now define the optimizer.
 
+<img src="images/img_19.png">
 
+Then finally fit the model to the dataset. 
+
+<img src="images/img_20.png">
