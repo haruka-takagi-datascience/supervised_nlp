@@ -15,8 +15,13 @@ The goal of this project is to recreate the Apel 2019 paper's Figure 5, shown be
 
 We base our model architecture on the details outlined in the Apel 2019 paper. The paper employs a "transductive" form of transfer learning. More specefically the paper uses a neural network with a long short term memory (LSTM) architecture and word embeddings. The deep learning model takes a sequence of word vectors and converts them into integer indices. The embeddings are then connected to a lyer of long short term memory cells. We then flatten the output from the LSTm cells in a vector and connect them to the output layer via a dense layer. The model uses a binary crossentropy loss function and encode agree as 1 and disagree as 0. The model uses rectified linear activation fuctions on all the hidden layers and apply 25% dropout to the final dense layer. Using the adam optimizer, we train the model on 80% ofthe training sample and 20% on the validation sample. The final model accuracies from the paper are 68% in-sample and 65% out-of-sample. The paper notes that these values are derive from the classification of all statements, whether or not they contain signs of agreement; in many cases the model is roghly ndifferent for such statements and generates a probability of agreement near 0.5.
 
+After training of the U.S. congressional debate data, we use the model to generate probabilities of agreement for each FOMC member's statements in the meeting transcripts. Then we average over the statements to compute a mean probability for the entire meeting transcript. 
 
+Here is an example of the training dataset from the U.S. congressional debate dataset.
+***Train Set:*** *I thank the gentleman for yielding me this time and for his great work on this bill. Mr. chairman, this country needs to create a new energy landscape that begins shrinking our disproportionate reliance on foreign energy sources and begins building one that places American ingenuity, producers and consumers at the forefront. I want to highlight one provision and that is the provision that signi cantly strengthens the important leaking underground storage tank program. The bill increases state funding... I urge their support and the support of the bill.*
 
+Here is an example from the test dataset from the FOMC meeting transcripts. 
+***Test Set:*** *Based on research from my staff, I have also lowered my estimate of ... real gdp growth ... reflecting expectations of trend growth for both the labor force and labor productivity.*
 
 
 
