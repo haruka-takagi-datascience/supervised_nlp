@@ -1,1 +1,1 @@
-# supervised_nlp
+# Agreement/Disagreement LSTM model on dialogue data
