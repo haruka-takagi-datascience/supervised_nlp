@@ -72,7 +72,7 @@ Now, lets do some data cleaning. We will make all text lowercase, remove punctua
 
 Let's prepare the debate dataset for model training.
 First convert the pandas columns into list, then convert them into a numpy array.
-<img src="images/img_10.png">
+<img src="images/img_100.png">
 
 Then initialize the tokenizer and create a word index.
 <img src="images/img_11.png">
