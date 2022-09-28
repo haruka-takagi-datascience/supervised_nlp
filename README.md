@@ -115,7 +115,7 @@ Now define the optimizer.
 
 Then finally fit the model to the dataset. 
 
-<img src="images/img_20.png">
+<img src="images/img_200.png">
 
 Here is the output during the training process.
 <INSERT IMAGE HERE>
