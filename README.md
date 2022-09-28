@@ -25,6 +25,14 @@ Here is an example from the test dataset from the FOMC meeting transcripts.
 
 ***Test Set:*** *Based on research from my staff, I have also lowered my estimate of ... real gdp growth ... reflecting expectations of trend growth for both the labor force and labor productivity.*
 
+## Environment Setup & Downloads
+
+In our model, we will use Stanford Glove word embeddings. To download the word embeddings to run the code yourself, please download the Wikipedia + Gigaword glove.6B.zip from [https://nlp.stanford.edu/projects/glove/](https://nlp.stanford.edu/projects/glove/). For this project I have used the 300 dimension version.
+
+For the development environment I used the GPU Hardware accelerator and High-RAM runtime shape from google colab pro. However, due to the 24 hour run time constraints, I did the final run of the model training on Cedar Compute Canada GPU servers. The reason we use Cedar and not Graham, Beluga or Narval is because Cedar is the only server that allows for internet access, allowing us to use services such as wandb (Weights & Biases). 
+
+Here are the list of packages we will be using for this project: pandas, numpy, nltk, os, random, re, string, textblob, wordcloud, sklearn, matplotlib, keras, tensorflow, time, datetime, & pickle
+
 ## Data Preparation
 
 We need to prepare two datasets, the U.S. congressional debate dataset and the FOMC meeting transcripts dataset.
