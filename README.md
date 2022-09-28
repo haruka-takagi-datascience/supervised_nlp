@@ -68,6 +68,23 @@ Then remove one sentence speeches that that include the word "yield" once.
 Now, lets do some data cleaning. We will make all text lowercase, remove punctuation, remove numbers, remove speaker identity tags, and remove double white spaces. We will not remove stop words as the paper did not indicate to remove them. 
 <img src="images/img_9.png">
 
+## LSTM Model Building
+
+Let's prepare the debate dataset for model training.
+First convert the pandas columns into list, then convert them into a numpy array.
+<img src="images/img_10.png">
+
+Then initialize the tokenizer and create a word index.
+<img src="images/img_11.png">
+
+Let's check on our training, test dataset and the words to index object.
+- Length of training set: 3236
+- Length of test set: 809
+- Length of words to index: 9215
+
+Now prepare a function that maps the words to a glove word embedding.
+<img src="images/img_12.png">
+
 
 
 
