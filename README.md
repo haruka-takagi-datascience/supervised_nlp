@@ -30,7 +30,7 @@ Here is an example from the test dataset from the FOMC meeting transcripts.
 We need to prepare two datasets, the U.S. congressional debate dataset and the FOMC meeting transcripts dataset.
 Let's first start by preparing the U.S. congressional debate dataset.
 
-The source of the U.S. congressional debate dataset is a paper from the EMNLP 2006 journal. The paper is titled ["Get Out the Vote: Determining Support of Opposition from Congressional Floor-Debate Transcripts" by Thomas M., B.Pang and L.Lee.](https://www.cs.cornell.edu/home/llee/papers/tpl-convote.home.html)
+The source of the U.S. congressional debate dataset is a paper from the EMNLP 2006 journal. The paper is titled ["Get Out the Vote: Determining Support of Opposition from Congressional Floor-Debate Transcripts"](https://www.cs.cornell.edu/home/llee/papers/tpl-convote.home.html) by Thomas M., B.Pang and L.Lee.
 
 
 
