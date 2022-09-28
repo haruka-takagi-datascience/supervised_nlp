@@ -85,7 +85,21 @@ Let's check on our training, test dataset and the words to index object.
 Now prepare a function that maps the words to a glove word embedding.
 <img src="images/img_12.png">
 
+Load in the word vectors and pad the training and text data to make them the same length.
+<img src="images/img_13.png">
 
+Then define an embedding matrix.
+<img src="images/img_14.png">
+
+Then define some names to make sure you can differentiate between your different models and saves. Also define callbacks, loggers, early stop and reduced learning rate mechanism.
+
+<img src="images/img_15.png">
+
+Now lets not forget to set up tensorboard so we can actually see how our training looks like. 
+
+<img src="images/img_16.png">
+
+## LSTM Model Training
 
 
 
