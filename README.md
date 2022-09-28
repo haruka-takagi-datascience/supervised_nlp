@@ -40,12 +40,33 @@ Let's first start by preparing the U.S. congressional debate dataset.
 
 The source of the U.S. congressional debate dataset is a paper from the EMNLP 2006 journal. The paper is titled ["Get Out the Vote: Determining Support of Opposition from Congressional Floor-Debate Transcripts"](https://www.cs.cornell.edu/home/llee/papers/tpl-convote.home.html) by Thomas M., B.Pang and L.Lee.
 
+First let's check if the GPU and RAM is running properly.
+<img src="images/img_3.png">
+<img src="images/img_4.png">
 
+Then load in the U.S. congressional debate dataset. 
+<img src="images/img_5.png">
 
+Let's get some statistics on our debate dataset.
+- The max length of each speech segment in the U.S. congressional debate data is 702 characters long.
+- The total number of unique words in the U.S. congressional debate corpus is 10621 words.
+- Number of speech segments and labels in U.S. congressional debate dataset is 4045.
+- 56.864% of the U.S. congressional debate dateset is Yes labeled speech segments.
+- 45.36% of the U.S. congressional debate dateset is No labeled speech segments.
 
+Our U.S. congressional debate dataset is sufficiently large, and the classes in the dataset are fairly balanced.
 
+Now lets remove the irrelevent frequent words from the data.
+<img src="images/img_6.png">
 
+Currently, our debate data currently looks like this.
+<img src="images/img_7.png">
 
+Then remove one sentence speeches that that include the word "yield" once.
+<img src="images/img_8.png">
+
+Now, lets do some data cleaning. We will make all text lowercase, remove punctuation, remove numbers, remove speaker identity tags, and remove double white spaces. We will not remove stop words as the paper did not indicate to remove them. 
+<img src="images/img_9.png">
 
 
 
