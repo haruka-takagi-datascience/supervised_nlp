@@ -116,3 +116,10 @@ Now define the optimizer.
 Then finally fit the model to the dataset. 
 
 <img src="images/img_20.png">
+
+Here is the output during the training process.
+<INSERT IMAGE HERE>
+
+Then load in the model with the best validation accuracy. And check the in-sample and out-of-sample accuracy.
+
+<img src="images/img_21.png">
