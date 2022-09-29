@@ -11,6 +11,12 @@ The deep learning model to predict agreement using U.S. congressional debate cor
 The goal of this project is to recreate the Apel 2019 paper's Figure 5, shown below. 
 <img src="images/img_2.png">
 
+
+```
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
 ## Model Details
 
 We base our model architecture on the details outlined in the Apel 2019 paper. The paper employs a "transductive" form of transfer learning. More specifically the paper uses a neural network with a long short term memory (LSTM) architecture and word embeddings. The deep learning model takes a sequence of word vectors and converts them into integer indices. The embeddings are then connected to a layer of long short term memory cells. We then flatten the output from the LSTM cells in a vector and connect them to the output layer via a dense layer. The model uses a binary crossentropy loss function and encode; agree as 1, and disagree as 0. The model uses rectified linear activation fuctions on all the hidden layers and apply 25% dropout to the final dense layer. Using the adam optimizer, we train the model on 80% of the training sample and 20% on the validation sample. The final model accuracies from the paper are 68% in-sample and 65% out-of-sample. The paper notes that these values are derived from the classification of all statements, whether or not they contain signs of agreement; in many cases the model is roughly indifferent for such statements and generates a probability of agreement near 0.5.
