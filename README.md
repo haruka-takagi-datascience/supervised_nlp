@@ -41,7 +41,7 @@ Let's first start by preparing the U.S. congressional debate dataset.
 The source of the U.S. congressional debate dataset is a paper from the EMNLP 2006 journal. The paper is titled ["Get Out the Vote: Determining Support of Opposition from Congressional Floor-Debate Transcripts"](https://www.cs.cornell.edu/home/llee/papers/tpl-convote.home.html) by Thomas M., B.Pang and L.Lee.
 
 First let's check if the GPU and RAM is running properly.<br />
-<img src="images/img_3.png width="70%" height="70%"><br />
+<img src="images/img_3.png" width="70%" height="70%"><br />
 <img src="images/img_4.png"><br />
 
 Then load in the U.S. congressional debate dataset. <br />
