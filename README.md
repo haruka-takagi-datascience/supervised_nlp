@@ -57,15 +57,7 @@ Let's get some statistics on our debate dataset.
 Our U.S. congressional debate dataset is sufficiently large, and the classes in the dataset are fairly balanced.
 
 Now lets remove the irrelevent frequent words from the data.
-```
-irrelevent_frequent_words = ['mr.chairman', 'mr.speaker', 'h.r.']
-
-def remove_frequent_words(df, irrelevent_frequent_words):
-  df['text'] = df['text'].apply(lambda x: ' '.join(x for x in x.split() if x not in irrelevent_frequent_words))
-  return df
-
-data = remove_frequent_words(data, irrelevent_frequent_words)
-```
+<img src="images/img_6.png">
 
 Currently, our debate data currently looks like this.
 <img src="images/img_7.png">
