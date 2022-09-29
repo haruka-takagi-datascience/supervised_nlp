@@ -60,7 +60,7 @@ Now lets remove the irrelevent frequent words from the data.<br />
 <img src="images/img_6.png">
 
 Currently, our debate data currently looks like this.<br />
-<img src="images/img_7.png" width="95%" height="95%">
+<img src="images/img_7.png" width="80%" height="80%">
 
 Then remove one sentence speeches that that include the word "yield" once.<br />
 <img src="images/img_8.png" width="70%" height="70%">
