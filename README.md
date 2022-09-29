@@ -60,13 +60,13 @@ Now lets remove the irrelevent frequent words from the data.<br />
 <img src="images/img_6.png">
 
 Currently, our debate data currently looks like this.<br />
-<img src="images/img_7.png" width="80%" height="80%">
+<img src="images/img_7.png" width="85%" height="85%">
 
 Then remove one sentence speeches that that include the word "yield" once.<br />
-<img src="images/img_8.png" width="70%" height="70%">
+<img src="images/img_8.png" width="75%" height="75%">
 
 Now, lets do some data cleaning. We will make all text lowercase, remove punctuation, remove numbers, remove speaker identity tags, and remove double white spaces. We will not remove stop words as the paper did not indicate to remove them. <br />
-<img src="images/img_90.png" width="80%" height="80%">
+<img src="images/img_90.png" width="85%" height="85%">
 
 ## LSTM Model Building
 
