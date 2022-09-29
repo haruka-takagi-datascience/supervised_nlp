@@ -2,14 +2,14 @@
 
 In this project we will be replicating a 2019 paper by Mikael Apel, Marianna Blix Grimaldi and Isaiah Hull from Sveriges Riksbank (Central Bank of Sweden), titled, ["How Much Information Do Monetary Policy Committees Disclose? Evidence from FOMC's Minutes and Transcripts."](https://onlinelibrary.wiley.com/doi/10.1111/jmcb.12885) This paper is in the field of central bank communication, monetary policy and machine learning. This paper does not have any scripts attached to it, so we will be intepreting the methedology from the paper to recreate their results.<br />
 
-<img src="images/img_1.png" width="100%" height="100%">
+<img src="images/img_1.png" width="90%" height="90%">
 
 We will investigate a specific part of this paper; the section measuring agreement and disagreement in Federal Open Market Committee meeting transcripts. In the paper, they measure agreement by performing deep transfer learning, a technique that involves training a deep learning model on one set of documents - U.S. congressional debates - and then making predictions on another: FOMC meeting transcripts. This is because of FOMC meeting transcripts are unlabeled. Overall, the paper finds that transcripts are more informative than minutes and heightened committee agreement typically preceds policy rate increases.
 
 The deep learning model to predict agreement using U.S. congressional debate corpus that contained a vote(yes or no) label that is sufficiently large. This corpus is an ideal choice because it associates speech text with a vote that indicates whether a speaker is agreeing or disagreeing with a bill. After training the deep learning model to achieve high out-of-sample prediction accuracy, we then use it to classify text from FOMC transcripts, thus giving us a novel measure of committee agreement. (Apel 2019)
 
 The goal of this project is to recreate the Apel 2019 paper's Figure 5, shown below. <br />
-<img src="images/img_2.png">
+<img src="images/img_2.png" width="90%" height="90%">
 
 ## Model Details
 
@@ -41,7 +41,7 @@ Let's first start by preparing the U.S. congressional debate dataset.
 The source of the U.S. congressional debate dataset is a paper from the EMNLP 2006 journal. The paper is titled ["Get Out the Vote: Determining Support of Opposition from Congressional Floor-Debate Transcripts"](https://www.cs.cornell.edu/home/llee/papers/tpl-convote.home.html) by Thomas M., B.Pang and L.Lee.
 
 First let's check if the GPU and RAM is running properly.<br />
-<img src="images/img_3.png"><br />
+<img src="images/img_3.png width="70%" height="70%""><br />
 <img src="images/img_4.png"><br />
 
 Then load in the U.S. congressional debate dataset. <br />
