@@ -1,14 +1,14 @@
 # Agreement/Disagreement LSTM model on Federal Open Market Committee Meeting Transcripts
 
-In this project we will be replicating a 2019 paper by Mikael Apel, Marianna Blix Grimaldi and Isaiah Hull from Sveriges Riksbank (Central Bank of Sweden), titled, ["How Much Information Do Monetary Policy Committees Disclose? Evidence from FOMC's Minutes and Transcripts."](https://onlinelibrary.wiley.com/doi/10.1111/jmcb.12885) This paper is in the field of central bank communication, monetary policy and machine learning. This paper does not have any scripts attached to it, so we will be intepreting the methedology from the paper to recreate their results.
+In this project we will be replicating a 2019 paper by Mikael Apel, Marianna Blix Grimaldi and Isaiah Hull from Sveriges Riksbank (Central Bank of Sweden), titled, ["How Much Information Do Monetary Policy Committees Disclose? Evidence from FOMC's Minutes and Transcripts."](https://onlinelibrary.wiley.com/doi/10.1111/jmcb.12885) This paper is in the field of central bank communication, monetary policy and machine learning. This paper does not have any scripts attached to it, so we will be intepreting the methedology from the paper to recreate their results.<br />
 
-<img src="images/img_1.png">
+<img src="images/img_1.png" width="100%" height="100%">
 
 We will investigate a specific part of this paper; the section measuring agreement and disagreement in Federal Open Market Committee meeting transcripts. In the paper, they measure agreement by performing deep transfer learning, a technique that involves training a deep learning model on one set of documents - U.S. congressional debates - and then making predictions on another: FOMC meeting transcripts. This is because of FOMC meeting transcripts are unlabeled. Overall, the paper finds that transcripts are more informative than minutes and heightened committee agreement typically preceds policy rate increases.
 
 The deep learning model to predict agreement using U.S. congressional debate corpus that contained a vote(yes or no) label that is sufficiently large. This corpus is an ideal choice because it associates speech text with a vote that indicates whether a speaker is agreeing or disagreeing with a bill. After training the deep learning model to achieve high out-of-sample prediction accuracy, we then use it to classify text from FOMC transcripts, thus giving us a novel measure of committee agreement. (Apel 2019)
 
-The goal of this project is to recreate the Apel 2019 paper's Figure 5, shown below. 
+The goal of this project is to recreate the Apel 2019 paper's Figure 5, shown below. <br />
 <img src="images/img_2.png">
 
 ## Model Details
@@ -40,12 +40,12 @@ Let's first start by preparing the U.S. congressional debate dataset.
 
 The source of the U.S. congressional debate dataset is a paper from the EMNLP 2006 journal. The paper is titled ["Get Out the Vote: Determining Support of Opposition from Congressional Floor-Debate Transcripts"](https://www.cs.cornell.edu/home/llee/papers/tpl-convote.home.html) by Thomas M., B.Pang and L.Lee.
 
-First let's check if the GPU and RAM is running properly.
-<img src="images/img_3.png">
-<img src="images/img_4.png">
+First let's check if the GPU and RAM is running properly.<br />
+<img src="images/img_3.png"><br />
+<img src="images/img_4.png"><br />
 
-Then load in the U.S. congressional debate dataset. 
-<img src="images/img_5.png">
+Then load in the U.S. congressional debate dataset. <br />
+<img src="images/img_5.png"><br />
 
 Let's get some statistics on our debate dataset.
 - The max length of each speech segment in the U.S. congressional debate data is 702 characters long.
@@ -56,25 +56,25 @@ Let's get some statistics on our debate dataset.
 
 Our U.S. congressional debate dataset is sufficiently large, and the classes in the dataset are fairly balanced.
 
-Now lets remove the irrelevent frequent words from the data.
+Now lets remove the irrelevent frequent words from the data.<br />
 <img src="images/img_6.png">
 
-Currently, our debate data currently looks like this.
+Currently, our debate data currently looks like this.<br />
 <img src="images/img_7.png">
 
-Then remove one sentence speeches that that include the word "yield" once.
+Then remove one sentence speeches that that include the word "yield" once.<br />
 <img src="images/img_8.png">
 
-Now, lets do some data cleaning. We will make all text lowercase, remove punctuation, remove numbers, remove speaker identity tags, and remove double white spaces. We will not remove stop words as the paper did not indicate to remove them. 
+Now, lets do some data cleaning. We will make all text lowercase, remove punctuation, remove numbers, remove speaker identity tags, and remove double white spaces. We will not remove stop words as the paper did not indicate to remove them. <br />
 <img src="images/img_90.png">
 
 ## LSTM Model Building
 
 Let's prepare the debate dataset for model training.
-First convert the pandas columns into list, then convert them into a numpy array.
+First convert the pandas columns into list, then convert them into a numpy array.<br />
 <img src="images/img_100.png">
 
-Then initialize the tokenizer and create a word index.
+Then initialize the tokenizer and create a word index.<br />
 <img src="images/img_11.png">
 
 Let's check on our training, test dataset and the words to index object.
@@ -82,44 +82,44 @@ Let's check on our training, test dataset and the words to index object.
 - Length of test set: 809
 - Length of words to index: 9215
 
-Now prepare a function that maps the words to a glove word embedding.
+Now prepare a function that maps the words to a glove word embedding.<br />
 <img src="images/img_12.png">
 
-Load in the word vectors and pad the training and text data to make them the same length.
+Load in the word vectors and pad the training and text data to make them the same length.<br />
 <img src="images/img_13.png">
 
-Then define an embedding matrix.
+Then define an embedding matrix.<br />
 <img src="images/img_14.png">
 
-Then define some names to make sure you can differentiate between your different models and saves. Also define callbacks, loggers, early stop and reduced learning rate mechanism.
+Then define some names to make sure you can differentiate between your different models and saves. Also define callbacks, loggers, early stop and reduced learning rate mechanism.<br />
 
 <img src="images/img_15.png">
 
-Now lets not forget to set up tensorboard so we can actually see how our training looks like. 
+Now lets not forget to set up tensorboard so we can actually see how our training looks like. <br />
 
 <img src="images/img_16.png">
 
 ## LSTM Model Training
 
-Now define the LSTM model as per the Apel 2019 paper descriptions.
+Now define the LSTM model as per the Apel 2019 paper descriptions.<br />
 
 <img src="images/img_170.png">
 
-Here is the model summary. 
+Here is the model summary. <br />
 
 <img src="images/img_18.png">
 
-Now define the optimizer.
+Now define the optimizer.<br />
 
 <img src="images/img_19.png">
 
-Then finally fit the model to the dataset. 
+Then finally fit the model to the dataset. <br />
 
 <img src="images/img_200.png">
 
 Here is the output during the training process.
 <INSERT IMAGE HERE>
 
-Then load in the model with the best validation accuracy. And check the in-sample and out-of-sample accuracy.
+Then load in the model with the best validation accuracy. And check the in-sample and out-of-sample accuracy.<br />
 
 <img src="images/img_21.png">
