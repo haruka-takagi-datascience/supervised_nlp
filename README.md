@@ -107,7 +107,7 @@ Now define the LSTM model as per the Apel 2019 paper descriptions.<br />
 
 Here is the model summary. <br />
 
-<img src="images/img_18.png" width="90%" height="90%">
+<img src="images/img_18.png" width="85%" height="85%">
 
 Now define the optimizer.<br />
 
