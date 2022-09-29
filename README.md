@@ -89,7 +89,7 @@ Load in the word vectors and pad the training and text data to make them the sam
 <img src="images/img_13.png" width="90%" height="90%">
 
 Then define an embedding matrix.<br />
-<img src="images/img_14.png" width="90%" height="90%">
+<img src="images/img_14.png" width="95%" height="95%">
 
 Then define some names to make sure you can differentiate between your different models and saves. Also define callbacks, loggers, early stop and reduced learning rate mechanism.<br />
 
