@@ -2,14 +2,14 @@
 
 In this project we will be replicating a 2019 paper by Mikael Apel, Marianna Blix Grimaldi and Isaiah Hull from Sveriges Riksbank (Central Bank of Sweden), titled, ["How Much Information Do Monetary Policy Committees Disclose? Evidence from FOMC's Minutes and Transcripts."](https://onlinelibrary.wiley.com/doi/10.1111/jmcb.12885) This paper is in the field of central bank communication, monetary policy and machine learning. This paper does not have any scripts attached to it, so we will be intepreting the methedology from the paper to recreate their results.<br />
 
-<img src="images/img_1.png" width="90%" height="90%">
+<img src="images/img_1.png" width="80%" height="80%">
 
 We will investigate a specific part of this paper; the section measuring agreement and disagreement in Federal Open Market Committee meeting transcripts. In the paper, they measure agreement by performing deep transfer learning, a technique that involves training a deep learning model on one set of documents - U.S. congressional debates - and then making predictions on another: FOMC meeting transcripts. This is because of FOMC meeting transcripts are unlabeled. Overall, the paper finds that transcripts are more informative than minutes and heightened committee agreement typically preceds policy rate increases.
 
 The deep learning model to predict agreement using U.S. congressional debate corpus that contained a vote(yes or no) label that is sufficiently large. This corpus is an ideal choice because it associates speech text with a vote that indicates whether a speaker is agreeing or disagreeing with a bill. After training the deep learning model to achieve high out-of-sample prediction accuracy, we then use it to classify text from FOMC transcripts, thus giving us a novel measure of committee agreement. (Apel 2019)
 
 The goal of this project is to recreate the Apel 2019 paper's Figure 5, shown below. <br />
-<img src="images/img_2.png" width="90%" height="90%">
+<img src="images/img_2.png" width="80%" height="80%">
 
 ## Model Details
 
@@ -42,10 +42,10 @@ The source of the U.S. congressional debate dataset is a paper from the EMNLP 20
 
 First let's check if the GPU and RAM is running properly.<br />
 <img src="images/img_3.png" width="70%" height="70%"><br />
-<img src="images/img_4.png"><br />
+<img src="images/img_4.png" width="70%" height="70%"><br />
 
 Then load in the U.S. congressional debate dataset. <br />
-<img src="images/img_5.png"><br />
+<img src="images/img_5.png" width="70%" height="70%"><br />
 
 Let's get some statistics on our debate dataset.
 - The max length of each speech segment in the U.S. congressional debate data is 702 characters long.
@@ -60,19 +60,19 @@ Now lets remove the irrelevent frequent words from the data.<br />
 <img src="images/img_6.png">
 
 Currently, our debate data currently looks like this.<br />
-<img src="images/img_7.png">
+<img src="images/img_7.png" width="95%" height="95%">
 
 Then remove one sentence speeches that that include the word "yield" once.<br />
-<img src="images/img_8.png">
+<img src="images/img_8.png" width="70%" height="70%">
 
 Now, lets do some data cleaning. We will make all text lowercase, remove punctuation, remove numbers, remove speaker identity tags, and remove double white spaces. We will not remove stop words as the paper did not indicate to remove them. <br />
-<img src="images/img_90.png">
+<img src="images/img_90.png" width="80%" height="80%">
 
 ## LSTM Model Building
 
 Let's prepare the debate dataset for model training.
 First convert the pandas columns into list, then convert them into a numpy array.<br />
-<img src="images/img_100.png">
+<img src="images/img_100.png" width="90%" height="90%">
 
 Then initialize the tokenizer and create a word index.<br />
 <img src="images/img_11.png">
@@ -83,31 +83,31 @@ Let's check on our training, test dataset and the words to index object.
 - Length of words to index: 9215
 
 Now prepare a function that maps the words to a glove word embedding.<br />
-<img src="images/img_12.png">
+<img src="images/img_12.png" width="90%" height="90%">
 
 Load in the word vectors and pad the training and text data to make them the same length.<br />
-<img src="images/img_13.png">
+<img src="images/img_13.png" width="90%" height="90%">
 
 Then define an embedding matrix.<br />
-<img src="images/img_14.png">
+<img src="images/img_14.png" width="90%" height="90%">
 
 Then define some names to make sure you can differentiate between your different models and saves. Also define callbacks, loggers, early stop and reduced learning rate mechanism.<br />
 
-<img src="images/img_15.png">
+<img src="images/img_15.png" width="90%" height="90%">
 
 Now lets not forget to set up tensorboard so we can actually see how our training looks like. <br />
 
-<img src="images/img_16.png">
+<img src="images/img_16.png" width="90%" height="90%">
 
 ## LSTM Model Training
 
 Now define the LSTM model as per the Apel 2019 paper descriptions.<br />
 
-<img src="images/img_170.png">
+<img src="images/img_170.png" width="90%" height="90%">
 
 Here is the model summary. <br />
 
-<img src="images/img_18.png">
+<img src="images/img_18.png" width="90%" height="90%">
 
 Now define the optimizer.<br />
 
@@ -115,11 +115,11 @@ Now define the optimizer.<br />
 
 Then finally fit the model to the dataset. <br />
 
-<img src="images/img_200.png">
+<img src="images/img_200.png" width="90%" height="90%">
 
 Here is the output during the training process.
 <INSERT IMAGE HERE>
 
 Then load in the model with the best validation accuracy. And check the in-sample and out-of-sample accuracy.<br />
 
-<img src="images/img_21.png">
+<img src="images/img_21.png" width="90%" height="90%">
