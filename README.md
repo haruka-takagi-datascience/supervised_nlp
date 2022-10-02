@@ -118,7 +118,7 @@ Then finally fit the model to the dataset. <br />
 <img src="images/img_200.png" width="90%" height="90%">
 
 Here is the output during the training process.
-<INSERT IMAGE HERE>
+<img src="images/img_300.png" width="90%" height="90%">
 
 Then load in the model with the best validation accuracy. And check the in-sample and out-of-sample accuracy.<br />
 
