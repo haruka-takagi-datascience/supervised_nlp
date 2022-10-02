@@ -122,7 +122,7 @@ Here is the output during the training process.
 
 Then load in the model with the best validation accuracy. And check the in-sample and out-of-sample accuracy.<br />
 
-<img src="images/img_500.png" width="90%" height="90%">
+<img src="images/img_500.png" width="100%" height="100%">
 
 
 **Under construction: Will be updated and finished by Sunday October 2nd, 2022
