@@ -124,6 +124,8 @@ Then load in the model with the best validation accuracy. And check the in-sampl
 
 <img src="images/img_500.png" width="100%" height="100%">
 
-Lastly, here is the training and validation accuracy over epochs.
+Lastly, here is the training and validation accuracy over epochs. Orange is the training accuracy & blue is the validation accuracy.
 
 <img src="images/img_600.png" width="100%" height="100%">
+
+This concludes the supervised NLP project! Thank you for reading!
