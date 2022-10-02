@@ -124,5 +124,6 @@ Then load in the model with the best validation accuracy. And check the in-sampl
 
 <img src="images/img_500.png" width="100%" height="100%">
 
+Lastly, here is the training and validation accuracy over epochs.
 
-**Under construction: Will be updated and finished by Sunday October 2nd, 2022
+<img src="images/img_600.png" width="100%" height="100%">
